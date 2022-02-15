@@ -13,5 +13,4 @@ jobs:
         run: |
           echo $TEST_SECRET | base64 --decode > cert.der
       - name: Show certificate information
-        run: |
-          openssl x509 -in cert.der -inform DER -text -noout
+        run: cat cert.der
