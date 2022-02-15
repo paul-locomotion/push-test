@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Encode secret into a file
+      - name: Decode secret into a file
         env:
           TEST_SECRET: ${{ secrets.TEST_SECRET }}
         run: |
-          echo $TEST_SECRET | base64 -e > cert.der
+          echo $TEST_SECRET | base64 -d > cert.der
       - name: Show encoded secret
         run: cat cert.der
