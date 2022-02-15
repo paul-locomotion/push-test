@@ -11,6 +11,5 @@ jobs:
         env:
           TEST_SECRET: ${{ secrets.TEST_SECRET }}
         run: |
-          echo $TEST_SECRET | base64 -d > cert.der
-      - name: Show encoded secret
-        run: cat cert.der
+          x=${echo $TEST_SECRET | base64}
+          echo $x | base64 -d
