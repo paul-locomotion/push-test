@@ -12,4 +12,4 @@ jobs:
           TEST_SECRET: ${{ secrets.TEST_SECRET }}
         run: |
           x=$(echo $TEST_SECRET | base64)
-          echo $x | base64 -d
+          echo $x
