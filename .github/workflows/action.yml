@@ -11,5 +11,5 @@ jobs:
         env:
           TEST_SECRET: ${{ secrets.TEST_SECRET }}
         run: |
-          x=$(echo -n "${TEST_SECRET}" | base64)
+          x=$(echo ${"TEST_SECRET"} | base64)
           echo $x
